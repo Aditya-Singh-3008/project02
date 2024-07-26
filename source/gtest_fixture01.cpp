@@ -14,7 +14,6 @@ protected:
         ptrMemory = (int *)malloc(nSize * sizeof(int));	     
      }
      
-
      virtual void TearDown()
      {
 	if(ptrMemory != NULL)
