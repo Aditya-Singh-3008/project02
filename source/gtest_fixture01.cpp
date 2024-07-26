@@ -13,6 +13,7 @@ protected:
 	nSize = 10;
         ptrMemory = (int *)malloc(nSize * sizeof(int));	     
      }
+     
 
      virtual void TearDown()
      {
