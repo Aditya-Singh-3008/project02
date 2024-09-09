@@ -18,12 +18,14 @@ jobs:
           sudo apt update
           sudo apt install gcc
           sudo apt install libgtest-dev
+          sudo apt install google-mock
+      
       - name: Build C code
         run: |
           mkdir build
           cd build
           cp ../source/*.cpp .
-          g++ -o tester gtest_fixture01.cpp -lgtest
+          g++ -o tester gtest_fixture01.cpp -lgmock -lgtest
       - name: Run Google mock test
         run: |
           ./tester
