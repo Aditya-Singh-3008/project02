@@ -27,9 +27,10 @@ jobs:
           cp ../source/*.cpp .
           g++ -c allocate_memory.cpp
           g++ -o tester allocate_memory.o gtest_fixture01.cpp -lgmock -lgtest
-      - name: Run Google mock test
-        run: |
           ./tester
+#      - name: Run Google mock test
+#        run: |
+#          ./tester
           
 #  test:
 #    runs-on: ${{ matrix.os }}
