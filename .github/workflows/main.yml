@@ -17,7 +17,7 @@ jobs:
         run: |
           sudo apt update
           sudo apt install gcc
-          sudo apt install googletest-dev
+          sudo apt install googletest
       - name: Build C code
         run: |
           mkdir build
