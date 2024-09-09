@@ -31,15 +31,15 @@ jobs:
         run: |
           ./tester
           
-  test:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [ubuntu-latest]
-    needs: build
-    steps:
-      - uses: actions/checkout@v3
-      - name: Run Google mock test
-        run: |
-          cd build
+#  test:
+#    runs-on: ${{ matrix.os }}
+#    strategy:
+#      matrix:
+#        os: [ubuntu-latest]
+#    needs: build
+#    steps:
+#      - uses: actions/checkout@v3
+#      - name: Run Google mock test
+#        run: |
+#          cd build
           ./tester
