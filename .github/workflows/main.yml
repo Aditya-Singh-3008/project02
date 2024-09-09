@@ -22,7 +22,6 @@ jobs:
           mkdir build
           cd build
           cp ../source/*.cpp .
-          g++ -o allocate_memory allocate_memory.cpp
       - name: Compile Unit test case.
         run: |
           g++ -o tester gtest_fixture01.cpp -lgmock -lgtest
