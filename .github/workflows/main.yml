@@ -9,7 +9,8 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [hclt-VirtualBox]
+        os: [ubuntu-latest]
+        #os: [hclt-VirtualBox]
 
     steps:
       - uses: actions/checkout@v3
@@ -36,7 +37,7 @@ jobs:
 #    runs-on: ${{ matrix.os }}
 #    strategy:
 #      matrix:
-#        os: [hclt-VirtualBox]
+#        os: [ubuntu-latest]
 #    needs: build
 #    steps:
 #      - uses: actions/checkout@v3
