@@ -23,7 +23,7 @@ jobs:
           mkdir build
           cd build
           cp ../source/*.cpp .
-          g++ -o tester gtest_fixture01.cpp -lgmock -lgtest
+          g++ -o tester gtest_fixture01.cpp -lgtest
       - name: Run Google mock test
         run: |
           ./tester
