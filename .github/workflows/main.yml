@@ -1,0 +1,47 @@
+name: Test CI/CD workflow
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install pre-requisites
+        run: |
+          sudo apt update
+          sudo apt install gcc
+      - name: Build C code
+        run: |
+          mkdir build
+          cd build
+          cp ../source/*.cpp .
+          g++ -o allocate_memory allocate_memory.cpp
+      - name: Compile Unit test case.
+        run: |
+          g++ -o tester gtest_fixture01.cpp -lgmock -lgtest
+      - name: Test running the main program to test if it is OK !!!
+        run: |
+          ./allocate_memory
+          
+  test:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+    needs: build
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install Google Mock
+        run: |
+          sudo apt update
+          sudo apt install googletest-dev
+      - name: Run tests
+        run: |
+          ./tester
