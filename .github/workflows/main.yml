@@ -17,17 +17,16 @@ jobs:
         run: |
           sudo apt update
           sudo apt install gcc
+          sudo apt install googletest-dev
       - name: Build C code
         run: |
           mkdir build
           cd build
           cp ../source/*.cpp .
-      - name: Compile Unit test case.
-        run: |
           g++ -o tester gtest_fixture01.cpp -lgmock -lgtest
-      - name: Test running the main program to test if it is OK !!!
+      - name: Run Google mock test
         run: |
-          ./allocate_memory
+          ./tester
           
   test:
     runs-on: ${{ matrix.os }}
@@ -37,10 +36,7 @@ jobs:
     needs: build
     steps:
       - uses: actions/checkout@v3
-      - name: Install Google Mock
+      - name: Run Google mock test
         run: |
-          sudo apt update
-          sudo apt install googletest-dev
-      - name: Run tests
-        run: |
+          cd build
           ./tester
