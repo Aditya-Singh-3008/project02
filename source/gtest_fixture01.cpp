@@ -1,11 +1,5 @@
 #include <gtest/gtest.h>
 
-
-
-
-
-
-
 extern int allocate_memory(int *ptrMemory, int size);
 
 class mallocTest : public ::testing::Test
