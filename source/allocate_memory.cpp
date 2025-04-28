@@ -1,6 +1,5 @@
 #include <malloc.h>
 
-
 int allocate_memory(int *ptrMemory, int size)
 {
   if(ptrMemory == NULL)
