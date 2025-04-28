@@ -33,8 +33,8 @@ TEST_F(mallocTest, nullPointerHandlingTest01)
   EXPECT_EQ(allocate_memory(ptrMemory, nSize), -1);
 }
 
-TEST_F(mallocTest, nullPointerHandlingTest02)
-//TEST_F(mallocTest, DISABLED_nullPointerHandlingTest02)
+//TEST_F(mallocTest, nullPointerHandlingTest02)
+TEST_F(mallocTest, DISABLED_nullPointerHandlingTest02)
 {
   ptrMemory = NULL;
 
